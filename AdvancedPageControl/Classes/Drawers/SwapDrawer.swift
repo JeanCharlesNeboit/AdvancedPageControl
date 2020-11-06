@@ -8,7 +8,8 @@
 
 import Foundation
 import UIKit
-public class SwapDrawer:AdvancedPageControlDrawerParent, AdvancedPageControlDraw {
+
+public class SwapDrawer: AdvancedPageControlDrawerParent, AdvancedPageControlDraw {
     
     public func draw(_ rect: CGRect) {
         drawIndicators(rect)
@@ -24,11 +25,11 @@ public class SwapDrawer:AdvancedPageControlDrawerParent, AdvancedPageControlDraw
                 if i ==  Int(floor(currentItem) + 1 ) {
                     let x = getCenteredXPosition(rect,itemPos: CGFloat(i), dotSize: width, space: space, numberOfPages: numberOfPages) - translate
                     drawItem(CGRect(x: x, y:  y, width: CGFloat(width ), height: CGFloat(height))
-                        , raduis:radius,color: dotsColor)
+                        , radius:radius,color: dotsColor)
                 }else{
                     let x = getCenteredXPosition(rect,itemPos: CGFloat(i), dotSize: width,space: space, numberOfPages: numberOfPages)
                     drawItem(CGRect(x: x, y:  y, width: CGFloat(width ), height: CGFloat(height))
-                        , raduis:radius,color: dotsColor)
+                        , radius:radius,color: dotsColor)
                 }
             }
         }
@@ -39,6 +40,6 @@ public class SwapDrawer:AdvancedPageControlDrawerParent, AdvancedPageControlDraw
         let y = rect.origin.y + centeredYPosition
         let x = getCenteredXPosition(rect, itemPos: currentItem, dotSize: width,space: space, numberOfPages: numberOfPages)
         drawItem(CGRect(x: x, y:  y , width: width , height: height )
-            , raduis:radius,color: indicatorColor)
+            , radius:radius,color: indicatorColor)
     }
 }

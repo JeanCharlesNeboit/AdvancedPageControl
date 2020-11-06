@@ -8,7 +8,8 @@
 
 import Foundation
 import UIKit
-public class ThinWormDrawer:AdvancedPageControlDrawerParent, AdvancedPageControlDraw {
+
+public class ThinWormDrawer: AdvancedPageControlDrawerParent, AdvancedPageControlDraw {
     
     public func draw(_ rect: CGRect) {
         drawIndicators(rect)
@@ -21,7 +22,7 @@ public class ThinWormDrawer:AdvancedPageControlDrawerParent, AdvancedPageControl
             let y =  rect.origin.y + centeredYPosition
             let x = getCenteredXPosition(rect,itemPos: CGFloat(i), dotSize: width,space: space, numberOfPages: numberOfPages)
             drawItem(CGRect(x: x, y:  y, width: CGFloat(width ), height: CGFloat(height))
-                , raduis:radius,color: dotsColor)
+                , radius:radius,color: dotsColor)
         }
     }
     
@@ -37,6 +38,6 @@ public class ThinWormDrawer:AdvancedPageControlDrawerParent, AdvancedPageControl
         let y = rect.origin.y + centeredYPosition + thinOffset / 2
         
         drawItem(CGRect(x: x, y:  y , width:  width  + ( halfMovementRatio * 2 * (space + width) ), height: height - thinOffset )
-            , raduis:radius,color: indicatorColor)
+            , radius:radius,color: indicatorColor)
     }
 }

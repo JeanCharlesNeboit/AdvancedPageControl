@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+
 public protocol AdvancedPageControlDraw {
     var currentItem:CGFloat { get set }
     var numberOfPages:Int { get set }
@@ -15,12 +16,12 @@ public protocol AdvancedPageControlDraw {
 }
 
 public class AdvancedPageControlDrawerParent {
-   public var numberOfPages:Int
+    public var numberOfPages:Int
     var height: CGFloat
     var width: CGFloat
     var space: CGFloat
     var radius: CGFloat
-   public var currentItem:CGFloat
+    public var currentItem:CGFloat
     var indicatorColor:UIColor
     var dotsColor:UIColor
     var isBordered:Bool
@@ -28,25 +29,25 @@ public class AdvancedPageControlDrawerParent {
     var borderWidth :CGFloat
     
     
-   public init(numberOfPages:Int? = 5,
-         height: CGFloat? = 16,
-         width: CGFloat? = 16,
-         space: CGFloat? = 16,
-         raduis: CGFloat? = 16,
-         currentItem: CGFloat? = 0,
-         indicatorColor: UIColor? = .white,
-         dotsColor: UIColor? = UIColor.lightGray,
-         isBordered:Bool = false,
-         borderColor:UIColor = .white,
-         borderWidth:CGFloat = 1) {
-        self.numberOfPages = numberOfPages!
-        self.space = space!
-        self.radius = raduis!
-        self.currentItem = currentItem!
-        self.indicatorColor = indicatorColor!
-        self.dotsColor = dotsColor!
-        self.width = width!
-        self.height = height!
+    public init(numberOfPages:Int = 5,
+                height: CGFloat = 16,
+                width: CGFloat = 16,
+                space: CGFloat = 16,
+                radius: CGFloat = 16,
+                currentItem: CGFloat = 0,
+                indicatorColor: UIColor = .white,
+                dotsColor: UIColor = UIColor.lightGray,
+                isBordered: Bool = false,
+                borderColor: UIColor = .white,
+                borderWidth: CGFloat = 1) {
+        self.numberOfPages = numberOfPages
+        self.space = space
+        self.radius = radius
+        self.currentItem = currentItem
+        self.indicatorColor = indicatorColor
+        self.dotsColor = dotsColor
+        self.width = width
+        self.height = height
         self.isBordered = isBordered
         self.borderColor = borderColor
         self.borderWidth = borderWidth
@@ -72,8 +73,8 @@ public class AdvancedPageControlDrawerParent {
         return centeredYPosition
     }
     
-    func drawItem(_ rect: CGRect, raduis:CGFloat, color:UIColor){
-        let path = UIBezierPath(roundedRect:rect, cornerRadius: raduis)
+    func drawItem(_ rect: CGRect, radius:CGFloat, color:UIColor){
+        let path = UIBezierPath(roundedRect:rect, cornerRadius: radius)
         
         if isBordered {
             path.lineWidth = borderWidth
@@ -82,7 +83,7 @@ public class AdvancedPageControlDrawerParent {
         }
         
         color.setFill()
-
+        
         path.fill()
     }
 }

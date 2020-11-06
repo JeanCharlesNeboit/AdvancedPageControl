@@ -8,11 +8,12 @@
 
 import Foundation
 import UIKit
-public class ColorBlendDrawer:AdvancedPageControlDrawerParent, AdvancedPageControlDraw {
+
+public class ColorBlendDrawer: AdvancedPageControlDrawerParent, AdvancedPageControlDraw {
     
-    var scaleFactor:CGFloat = 8
+    var scaleFactor: CGFloat = 8
     
-   public func draw(_ rect: CGRect) {
+    public func draw(_ rect: CGRect) {
         drawIndicators(rect)
     }
     
@@ -27,16 +28,16 @@ public class ColorBlendDrawer:AdvancedPageControlDrawerParent, AdvancedPageContr
                 if i ==  Int(floor(currentItem) + 1 ) {
                     
                     drawItem(CGRect(x: x, y:  y, width: CGFloat(width ) , height: CGFloat(height) )
-                        , raduis:radius,color: (indicatorColor * Double(progress) ) + (dotsColor * Double(1 - progress) ))
+                        , radius:radius,color: (indicatorColor * Double(progress) ) + (dotsColor * Double(1 - progress) ))
                 }else{
                     
                     drawItem(CGRect(x: x, y:  y, width: CGFloat(width ), height: CGFloat(height))
-                        , raduis:radius,color: dotsColor)
+                        , radius:radius,color: dotsColor)
                 }
             }else{
                 
                 drawItem(CGRect(x: x, y:  y, width: CGFloat(width ) , height: CGFloat(height) )
-                    , raduis:radius,color: (dotsColor * Double(progress) ) + (indicatorColor * Double(1 - progress) ))
+                    , radius:radius,color: (dotsColor * Double(progress) ) + (indicatorColor * Double(1 - progress) ))
             }
         }
     }

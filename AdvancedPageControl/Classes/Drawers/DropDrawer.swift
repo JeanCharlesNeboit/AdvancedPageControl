@@ -8,11 +8,12 @@
 
 import Foundation
 import UIKit
-public class DropDrawer:AdvancedPageControlDrawerParent, AdvancedPageControlDraw {
+
+public class DropDrawer: AdvancedPageControlDrawerParent, AdvancedPageControlDraw {
     
     var dropRatio:CGFloat = -10
     
-   public func draw(_ rect: CGRect) {
+    public func draw(_ rect: CGRect) {
         drawIndicators(rect)
         drawCurrentItem(rect)
     }
@@ -23,7 +24,7 @@ public class DropDrawer:AdvancedPageControlDrawerParent, AdvancedPageControlDraw
             let y =  rect.origin.y + centeredYPosition
             let x = getCenteredXPosition(rect,itemPos: CGFloat(i), dotSize: width,space: space, numberOfPages: numberOfPages)
             drawItem(CGRect(x: x, y:  y, width: CGFloat(width ), height: CGFloat(height))
-                , raduis:radius,color: dotsColor)
+                , radius:radius,color: dotsColor)
         }
     }
     
@@ -33,6 +34,6 @@ public class DropDrawer:AdvancedPageControlDrawerParent, AdvancedPageControlDraw
         let y = rect.origin.y + centeredYPosition + (scaleFactor * 2)
         let x = getCenteredXPosition(rect, itemPos: currentItem, dotSize: width,space: space, numberOfPages: numberOfPages) - (scaleFactor / 2)
         drawItem(CGRect(x: x, y:  y , width: width + scaleFactor, height: height + scaleFactor)
-            , raduis:radius,color: indicatorColor)
+            , radius:radius,color: indicatorColor)
     }
 }

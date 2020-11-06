@@ -9,9 +9,9 @@
 import Foundation
 import UIKit
 
-public class AdvancedPageControlView: UIView{
+public class AdvancedPageControlView: UIView {
     public var numberOfPages:Int {get {return drawer.numberOfPages} set(val){ drawer.numberOfPages = val }}
-
+    
     public var drawer:AdvancedPageControlDraw = SlideDrawer()
     
     public func setCurrentItem(offset:CGFloat,width:CGFloat){

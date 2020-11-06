@@ -8,7 +8,8 @@
 
 import Foundation
 import UIKit
-public class SlideDrawer:AdvancedPageControlDrawerParent, AdvancedPageControlDraw {
+
+public class SlideDrawer: AdvancedPageControlDrawerParent, AdvancedPageControlDraw {
     
     public func draw(_ rect: CGRect) {
         drawIndicators(rect)
@@ -21,7 +22,7 @@ public class SlideDrawer:AdvancedPageControlDrawerParent, AdvancedPageControlDra
             let y =  rect.origin.y + centeredYPosition
             let x = getCenteredXPosition(rect,itemPos: CGFloat(i), dotSize: width,space: space, numberOfPages: numberOfPages)
             drawItem(CGRect(x: x, y:  y, width: CGFloat(width ), height: CGFloat(height))
-                , raduis:radius,color: dotsColor)
+                , radius:radius,color: dotsColor)
         }
     }
     
@@ -30,6 +31,6 @@ public class SlideDrawer:AdvancedPageControlDrawerParent, AdvancedPageControlDra
         let y = rect.origin.y + centeredYPosition
         let x = getCenteredXPosition(rect, itemPos: currentItem, dotSize: width,space: space, numberOfPages: numberOfPages)
         drawItem(CGRect(x: x, y:  y , width: width , height: height )
-            , raduis:radius,color: indicatorColor)
+            , radius:radius,color: indicatorColor)
     }
 }
